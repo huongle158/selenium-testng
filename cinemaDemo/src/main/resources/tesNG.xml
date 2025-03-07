@@ -1,0 +1,12 @@
+<suite name="Test Suite">
+    <test name="Test">
+        <classes>
+            <class name="scripts.cinemaBookingFromHomeToolTest">
+                <method>
+
+                </method>
+            </class>
+            <class name="scripts.invalidLoginTest"/>
+        </classes>
+    </test>
+</suite>
