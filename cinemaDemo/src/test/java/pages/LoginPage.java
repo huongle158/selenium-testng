@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class LoginPage {
 
@@ -34,10 +35,6 @@ public class LoginPage {
 
     public void verifyErrorMessageIsDisplay(){
         WebElement errorMsg = driver.findElement(By.xpath("//p[@id='matKhau-helper-text']"));
-        if(errorMsg.isDisplayed()){
-            System.out.println("Passed");
-        } else {
-            System.out.println("Failed");
-        }
+        Assert.assertTrue(errorMsg.equals(""));
     }
 }

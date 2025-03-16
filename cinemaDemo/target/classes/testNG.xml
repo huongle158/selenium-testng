@@ -1,0 +1,16 @@
+<suite name="Test Suite">
+    <test name="Regression Test">
+        <classes>
+            <class name="scripts.invalidLoginTest">
+                <methods>
+                    <include name ="invalidBlankPasswordTest"/>
+                </methods>
+            </class>
+            <class name="scripts.cinemaBookingFromHomeToolTest">
+                <methods>
+                    <include name ="verifyBookingByHomeTool"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

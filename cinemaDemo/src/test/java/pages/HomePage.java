@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class HomePage {
 
@@ -24,5 +25,10 @@ public class HomePage {
     public void selectHomeToolFilter(String filter, String option){
         driver.findElement(By.xpath("//select[option[@disabled and text()='"+filter+"']]")).click();
         driver.findElement(By.xpath("//option[text()='"+option+"']")).click();
+    }
+
+    public void verifyMovieIsMoana2(String movie) {
+       String filmName = driver.findElement(By.xpath("//h2")).getText();
+        Assert.assertEquals(filmName, "Moana 2");
     }
 }

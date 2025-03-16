@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
@@ -28,8 +29,8 @@ public class cinemaBookingFromHomeToolTest extends BaseTest {
 
         homePage.clickSignInButton();
         loginPage.login("huydao226", "asdEDZ12#");
-
 //        homePage.selectFileSlotFromPanel("Raya","07-03-2022");
+        homePage.verifyMovieIsMoana2("HÀNH TRÌNH CỦA MOANA 2");
 
         WebElement homeTool = driver.findElement(By.xpath("//div[@id='homeTool']"));
         actions.scrollToElement(homeTool);
@@ -39,12 +40,7 @@ public class cinemaBookingFromHomeToolTest extends BaseTest {
 
         //select Film
         homePage.selectHomeToolFilter("Phim", "HÀNH TRÌNH CỦA MOANA 2");
-        homePage.selectHomeToolFilter("Rạp", "CGV - Aeon Bình ");
-
-        //select theater
-        //select date
-//        purchasePage.purchaseSlot("42");
-//        profilePage.verifyBookingPrice("120000");
+        homePage.selectHomeToolFilter("Rạp", "CGV - Aeon Bình Tân");
     }
 
     @Test
@@ -63,5 +59,10 @@ public class cinemaBookingFromHomeToolTest extends BaseTest {
 
         //Verify if there is error message displays
         loginPage.verifyErrorMessageIsDisplay();
+    }
+
+    @AfterMethod
+    public void tearDown(){
+        driver.quit();
     }
 }
